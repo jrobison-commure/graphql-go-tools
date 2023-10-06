@@ -1,0 +1,26 @@
+name: auto update dependabot
+
+on: push
+  # push:
+  #   paths:
+  #   - '**/package.json'
+  #   - '**/go.mod'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+
+    - name: Download Go package
+      run: go get github.com/black-desk/update-dependabot
+
+    - name: Build and Run Go package
+      run: go run github.com/black-desk/update-dependabot
