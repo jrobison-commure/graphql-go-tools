@@ -3,47 +3,62 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gomod"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    # Only create pull requests to update lockfiles
-    create-merge-requests: true
-    # Ignore any new versions that would require package manifest changes
-    ignore-requirements: true
-    # Include vendor to equal true
-    go-modules-config:
-      vendor: true
-
-  - package-ecosystem: "cargo"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    # Only create pull requests to update lockfiles
-    create-merge-requests: true
-    # Ignore any new versions that would require package manifest changes
-    ignore-requirements: true
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    # Only create pull requests to update lockfiles
-    create-merge-requests: true
-    # Ignore any new versions that would require package manifest changes
-    ignore-requirements: true
-
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    # Only create pull requests to update lockfiles
-    create-merge-requests: true
-    # Ignore any new versions that would require package manifest changes
-    ignore-requirements: true
-
-# Maintain dependencies for GitHub Actions
-- package-ecosystem: "github-actions"
+- package-ecosystem: "gomod"
   directory: "/"
   schedule:
     interval: "daily"
+  # Only create pull requests to update lockfiles
+  create-merge-requests: true
+  # Ignore any new versions that would require package manifest changes
+  ignore-requirements: true
+  # Include vendor to equal true
+  go-modules-config:
+    vendor: true
+
+- package-ecosystem: "cargo"
+  directory: "/"
+  schedule:
+    interval: "daily"
+  # Only create pull requests to update lockfiles
+  create-merge-requests: true
+  # Ignore any new versions that would require package manifest changes
+  ignore-requirements: true
+
+- package-ecosystem: "npm"
+  directory: "/"
+  schedule:
+    interval: "daily"
+  # Only create pull requests to update lockfiles
+  create-merge-requests: true
+  # Ignore any new versions that would require package manifest changes
+  ignore-requirements: true
+
+- package-ecosystem: "pip"
+  directory: "/"
+  schedule:
+    interval: "daily"
+  # Only create pull requests to update lockfiles
+  create-merge-requests: true
+  # Ignore any new versions that would require package manifest changes
+  ignore-requirements: true
+
+- package-ecosystem: "github-actions"
+  # Maintain dependencies for GitHub Actions
+  directory: "/"
+  schedule:
+    interval: "daily"
+  # Only create pull requests to update lockfiles
+  create-merge-requests: true
+  # Ignore any new versions that would require package manifest changes
+  ignore-requirements: true
+
+- package-ecosystem: "docker"
+  # Maintain dependencies for Docker
+  directory: "/"
+  schedule:
+    interval: "daily"
+  # Only create pull requests to update lockfiles
+  create-merge-requests: true
+  # Ignore any new versions that would require package manifest changes
+  ignore-requirements: true
+
