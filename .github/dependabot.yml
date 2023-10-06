@@ -1,0 +1,49 @@
+# By using the dependabot.yml file, you can have fine-grained control over how the Dependabot tool operates and keeps your project's dependencies up to date. 
+# It helps automate dependency management and reduce the risk of using outdated or vulnerable dependencies.
+
+version: 2
+updates:
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Only create pull requests to update lockfiles
+    create-merge-requests: true
+    # Ignore any new versions that would require package manifest changes
+    ignore-requirements: true
+    # Include vendor to equal true
+    go-modules-config:
+      vendor: true
+
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Only create pull requests to update lockfiles
+    create-merge-requests: true
+    # Ignore any new versions that would require package manifest changes
+    ignore-requirements: true
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Only create pull requests to update lockfiles
+    create-merge-requests: true
+    # Ignore any new versions that would require package manifest changes
+    ignore-requirements: true
+
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Only create pull requests to update lockfiles
+    create-merge-requests: true
+    # Ignore any new versions that would require package manifest changes
+    ignore-requirements: true
+
+# Maintain dependencies for GitHub Actions
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "daily"
