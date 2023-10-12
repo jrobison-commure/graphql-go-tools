@@ -1,0 +1,139 @@
+# Configuration options for the dependabot.yml file
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+- package-ecosystem: "gomod"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    # Include vendor to equal true
+    # Don't use this option if you're using gomod as Dependabot automatically detects vendoring for this tool.
+    # go-modules-config:
+    #   vendor: true
+
+- package-ecosystem: "cargo"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    # Specify the Rust version to use
+    # rust:
+    #   version: "1.50.x"
+    #   # Specify the path to the Cargo.toml file
+    #   cargo: true
+    #   # Specify the path to the Cargo.lock file
+    #   lockfile: true
+
+- package-ecosystem: "npm"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    # Specify the Node.js version to use
+    # node:
+    #   version: "14.x"
+    #   # Specify the path to the package.json file
+    #   package-ecosystem: true
+    #   # Specify the path to the package-lock.json file
+    #   lockfile-path: true
+
+- package-ecosystem: "pip"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    # Specify the Python version to use
+    # python:
+    #   version: "3.9.x"
+    #   # Specify the path to the requirements.txt file
+    #   requirements: true
+    #   # Specify the path to the Pipfile.lock file
+    #   pipfile: true
+
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    # Specify the path to the workflow file
+    # workflow-path: ".github/workflows/main.yml"
+
+# - package-ecosystem: "git-submodule"
+#   directory: "/"
+#   schedule:
+#     interval: "daily"
+#
+#
+#   # Specify the path to the .gitmodules file
+#   # gitmodules-path: ".gitmodules"
+
+- package-ecosystem: "docker"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    # Specify the path to the Dockerfile
+    # dockerfile-path: "Dockerfile"
+    # Specify the path to the docker-compose.yml file
+    # compose-file-path: "docker-compose.yml"
+
+
+- package-ecosystem: "composer"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    # Specify the PHP version to use
+    # php:
+    #   version: "7.4.x"
+    #   # Specify the path to the composer.json file
+    #   composer-json: true
+    #   # Specify the path to the composer.lock file
+    #   lockfile: true
+
+# - package-ecosystem: "github-actions"
+#   directory: "/"
+#   schedule:
+#     interval: "daily"
+#
+#
+#   # Specify the path to the workflow file
+#   # workflow-path: ".github/workflows/main.yml"
+
+# - package-ecosystem: "git-submodule"
+#   directory: "/"
+#   schedule:
+#     interval: "daily"
+#
+#
+#   # Specify the path to the .gitmodules file
+#   # gitmodules-path: ".gitmodules"
+
+# - package-ecosystem: "gomod"
+#   directory: "/"
+#   schedule:
+#     interval: "daily"
+#
+#
+#   # Include vendor to equal true
+#   # go-modules-config:
+#   #   vendor: true
+
+# - package-ecosystem: "pip"
+#   directory: "/"
+#   schedule:
+#     interval: "daily"
+#
+#
+#   # Specify the Python version to use
+#   # python:
+#   #   version: "3.9.x"
+#   #   # Specify the path to the requirements.txt file
+#   #   requirements: true
+#   #   # Specify the path to the Pipfile.lock file
+#   #   pipfile: true
+
+# - package-ecosystem: "terraform"
+#   directory: "/"
+#   schedule:
+#     interval: "daily"
+#
+#
+#   # Specify the path to the main Terraform configuration file
+#   # terraform:
+#   #   path: "main.tf"
